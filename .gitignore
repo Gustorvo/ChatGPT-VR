@@ -60,3 +60,4 @@ crashlytics-build.properties
 
 Assets/XR/WitAIConfigurationFile.asset
 Assets/XR/WitAIConfigurationFile.asset.meta
+ProjectSettings/wit.config
