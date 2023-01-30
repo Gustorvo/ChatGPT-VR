@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.dbrizov.naughtyattributes": {
+      "version": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "8a8fa5a9659a6d63f196391c71e06c4286c8acd7"
+    },
     "com.srcnalt.openai-unity": {
       "version": "https://github.com/srcnalt/OpenAI-Unity.git",
       "depth": 0,
