@@ -12,13 +12,6 @@
       },
       "hash": "76f76584a113b240a4ec11f324b17302bde9a53a"
     },
-    "com.dbrizov.naughtyattributes": {
-      "version": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "8a8fa5a9659a6d63f196391c71e06c4286c8acd7"
-    },
     "com.readyplayerme.avatarloader": {
       "version": "https://github.com/readyplayerme/rpm-unity-sdk-avatar-loader.git#v1.0.0",
       "depth": 0,
@@ -45,7 +38,7 @@
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       },
-      "hash": "5ee0efbb818d91a260bcbfd38e9c06bd2963a3f1"
+      "hash": "d12837d394d3380542831dafc8d5c141e035d1c7"
     },
     "com.unity.burst": {
       "version": "1.6.6",
