@@ -365,6 +365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 683714127}
   - component: {fileID: 683714126}
+  - component: {fileID: 683714128}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -407,6 +408,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &683714128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683714125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28514d4e3307ea499fd7eef33ff9703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  urlToPromtFile: https://raw.githubusercontent.com/f/awesome-chatgpt-prompts/21b5ce99beb752dc0b088b60cdff18de4f9ee497/prompts.csv
 --- !u!1 &897141516 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3917861352137741249, guid: 519328464250e4043a82937478aea452, type: 3}
