@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0447596b1a67de49ba5720fda0bdabe, type: 3}
+  m_Name: The Caterpillar
+  m_EditorClassIdentifier: 
+  characterName: The Caterpillar
+  brain: workspaces/default--ni-bx7mppw4gtpmnucocw/characters/the_caterpillar
+  avatar: {fileID: 0}
+  workspace: workspaces/default--ni-bx7mppw4gtpmnucocw
+  currentScene: workspaces/default--ni-bx7mppw4gtpmnucocw/characters/the_caterpillar
+  ownerShip: 0
+  defaultThumbnail: {fileID: 2800000, guid: 701266dd2d1dfc44dbe69245e264581c, type: 3}
+  index: 0
+  triggers: []
+  scenes:
+  - workspaces/default--ni-bx7mppw4gtpmnucocw/scenes/the_caterpillars_mushroom
+  modelUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_model/6c205a22-eb54-4c74-8bca-015688a5d3ba.glb
+  posUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/6c205a22-eb54-4c74-8bca-015688a5d3ba_posture.jpg
+  previewImgUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/6c205a22-eb54-4c74-8bca-015688a5d3ba_portrait.jpg
+  characterID: 

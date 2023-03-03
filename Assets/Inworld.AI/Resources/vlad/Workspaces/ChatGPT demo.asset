@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679553faa086cdc48a58556300e27230, type: 3}
+  m_Name: ChatGPT demo
+  m_EditorClassIdentifier: 
+  title: ChatGPT demo
+  fullName: workspaces/default--ni-bx7mppw4gtpmnucocw
+  characters:
+  - {fileID: 11400000, guid: 1c25ff4afb964214c8ba96829d086840, type: 2}
+  - {fileID: 11400000, guid: fec66f1c083d32342bf8e12b4870afd3, type: 2}
+  scenes:
+  - {fileID: 11400000, guid: 33a4d13edda8756498e05a6a7b355321, type: 2}
+  integrations:
+  - {fileID: 11400000, guid: 4a80796edd635f54b8b29ea423f7581a, type: 2}
+  index: 0

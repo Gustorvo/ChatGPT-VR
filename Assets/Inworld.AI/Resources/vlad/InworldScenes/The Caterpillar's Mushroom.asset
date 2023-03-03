@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ad0515a2868cd4282589144c7820fd, type: 3}
+  m_Name: The Caterpillar's Mushroom
+  m_EditorClassIdentifier: 
+  fullName: workspaces/default--ni-bx7mppw4gtpmnucocw/scenes/the_caterpillars_mushroom
+  shortName: The Caterpillar's Mushroom
+  description: 'The Caterpillar and {player} are on top of the giant, colorful mushroom
+    where The Caterpillar lives and gives visitor''s directions from. '
+  characters:
+  - workspaces/default--ni-bx7mppw4gtpmnucocw/characters/the_caterpillar
+  - workspaces/default--ni-bx7mppw4gtpmnucocw/characters/chat_character
+  triggers: []
+  index: 0

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0447596b1a67de49ba5720fda0bdabe, type: 3}
+  m_Name: Chat character
+  m_EditorClassIdentifier: 
+  characterName: Chat character
+  brain: workspaces/default--ni-bx7mppw4gtpmnucocw/characters/chat_character
+  avatar: {fileID: 0}
+  workspace: workspaces/default--ni-bx7mppw4gtpmnucocw
+  currentScene: workspaces/default--ni-bx7mppw4gtpmnucocw/characters/chat_character
+  ownerShip: 0
+  defaultThumbnail: {fileID: 2800000, guid: 5ebed7e024c176d4d9024ef5b206b942, type: 3}
+  index: 0
+  triggers: []
+  scenes:
+  - workspaces/default--ni-bx7mppw4gtpmnucocw/scenes/the_caterpillars_mushroom
+  modelUri: 
+  posUri: 
+  previewImgUri: 
+  characterID: acd9694f-1d42-4553-90f6-5aa9cbd7dd67
