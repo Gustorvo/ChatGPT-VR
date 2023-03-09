@@ -387,7 +387,7 @@ MonoBehaviour:
   stt: {fileID: 1720954}
   tts: {fileID: 647163604}
   chat: {fileID: 370049264}
-  welcomePhraseAudio: {fileID: 8300000, guid: df49a80d13cf0b040af340226d69c073, type: 3}
+  welcomePhraseAudio: {fileID: 8300000, guid: 7bf86e3449ff4114cbbd5eaf65da52d0, type: 3}
   errorAudio: {fileID: 8300000, guid: a6277c76ad38c714bbe3018dfb20cce5, type: 3}
 --- !u!4 &683714127
 Transform:

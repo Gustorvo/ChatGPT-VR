@@ -68,7 +68,7 @@ public class Main : MonoBehaviour
         var chatResponse = await chat.SendRequestAsync(recognizedText, token);
 
         // try get sentimental analysis
-        var analisis = chat.DoSentimentalAnalysis(chatResponse, token);
+       // var analisis = chat.DoSentimentalAnalysis(chatResponse, token);
 
         // Speak generated response
         await tts.SpeakTextAsync(chatResponse, token);
