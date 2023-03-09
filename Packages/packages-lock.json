@@ -31,15 +31,6 @@
       },
       "hash": "4bccdb4898db9ffa2037bd34b6588f4222f56069"
     },
-    "com.srcnalt.openai-unity": {
-      "version": "https://github.com/srcnalt/OpenAI-Unity.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.nuget.newtonsoft-json": "3.0.2"
-      },
-      "hash": "d12837d394d3380542831dafc8d5c141e035d1c7"
-    },
     "com.unity.burst": {
       "version": "1.6.6",
       "depth": 1,
