@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.atteneder.gltfast": "https://github.com/atteneder/glTFast.git#v5.0.0",
+    "com.openai.unity": "3.1.1",
     "com.readyplayerme.avatarloader": "https://github.com/readyplayerme/rpm-unity-sdk-avatar-loader.git#v1.0.0",
     "com.readyplayerme.core": "https://github.com/readyplayerme/Unity-core.git",
     "com.unity.feature.development": "1.0.1",
@@ -40,5 +41,15 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "OpenUPM",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.openai",
+        "com.utilities"
+      ]
+    }
+  ]
 }
