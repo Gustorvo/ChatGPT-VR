@@ -63,7 +63,7 @@ public class STT : MonoBehaviour
             recognizer.Recognized += (s, e) =>
             {
                 result = e.Result.Text;
-                Debug.LogError($"Recognized: {result}");
+                Debug.Log($"Recognized: {result}");
                 recognitionCompleted.TrySetResult(result);
             };
 
