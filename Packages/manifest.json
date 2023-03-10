@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.atteneder.gltfast": "https://github.com/atteneder/glTFast.git#v5.0.0",
-    "com.openai.unity": "3.1.2",
+    "com.openai.unity": "3.1.3",
     "com.readyplayerme.avatarloader": "https://github.com/readyplayerme/rpm-unity-sdk-avatar-loader.git#v1.0.0",
     "com.readyplayerme.core": "https://github.com/readyplayerme/Unity-core.git",
     "com.unity.feature.development": "1.0.1",
