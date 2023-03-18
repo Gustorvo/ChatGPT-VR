@@ -1,14 +1,11 @@
 using System;
 using UnityEngine;
 using System.Threading;
-using UnityEngine.Assertions;
 using System.Threading.Tasks;
 using Microsoft.CognitiveServices.Speech;
 
 public class TTS : MonoBehaviour
 {
-    [SerializeField] TextAsset subscriptionKey;
-    [SerializeField] string region = "northeurope";
     [SerializeField] AudioSource audioSource;
 
     private SpeechConfig config;
@@ -19,13 +16,12 @@ public class TTS : MonoBehaviour
     private const int sampleRate = 24000; // 24kHz audio    
 
     private void Awake()
-    {
-        Assert.IsNotNull(subscriptionKey);
+    {        
+        config = AzureAuthentication.InitAzureSpeech();
     }
 
     private void Start()
     {
-        config = SpeechConfig.FromSubscription(subscriptionKey.ToString(), region);
         // The default format is RIFF, which has a riff header.
         // We are playing the audio in memory as audio clip, which doesn't require riff header.
         // So we need to set the format to raw (24KHz for better quality).

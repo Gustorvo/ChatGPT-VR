@@ -1,29 +1,25 @@
 using UnityEngine;
 using System.Threading;
 using System.Threading.Tasks;
-using UnityEngine.Assertions;
 using Microsoft.CognitiveServices.Speech;
 #if PLATFORM_ANDROID
 using UnityEngine.Android;
 #endif
 
 public class STT : MonoBehaviour
-{  
-    [SerializeField] TextAsset subscriptionKey;
-    [SerializeField] string region = "northeurope";
-    
+{
+
 #if PLATFORM_ANDROID
     // Required to manifest microphone permission, cf.
     // https://docs.unity3d.com/Manual/android-manifest.html
     private Microphone mic;
 #endif
     private SpeechConfig config;
-  
+
 
     private void Awake()
-    {
-        Assert.IsNotNull(subscriptionKey);
-        Init();
+    {      
+        config = AzureAuthentication.InitAzureSpeech();
     }
     void Start()
     {
@@ -37,17 +33,12 @@ public class STT : MonoBehaviour
         }
 #endif
     }
-
-    private void Init()
-    {
-        // Creates an instance of a speech config with specified subscription key and service region.      
-        config = SpeechConfig.FromSubscription(subscriptionKey.ToString(), region);
-    }
+  
 
     public async Task<string> StartRecognitionAsync(CancellationToken token)
     {
         string result = "";
-       // print("starting recognition");
+        // print("starting recognition");
 
         using (var recognizer = new SpeechRecognizer(config))
         {
