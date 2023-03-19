@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e1ba00ed6b61c46b188e1b92f64ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  apiKey: {fileID: 4900000, guid: 4a7b81407827e614388b4c5fce3194aa, type: 3}
+  apiKey: {fileID: 0}
 --- !u!1 &647163603
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +387,7 @@ MonoBehaviour:
   stt: {fileID: 1720954}
   tts: {fileID: 647163604}
   chat: {fileID: 370049264}
-  welcomePhraseAudio: {fileID: 8300000, guid: df49a80d13cf0b040af340226d69c073, type: 3}
+  welcomePhraseAudio: {fileID: 8300000, guid: 7bf86e3449ff4114cbbd5eaf65da52d0, type: 3}
   errorAudio: {fileID: 8300000, guid: a6277c76ad38c714bbe3018dfb20cce5, type: 3}
 --- !u!4 &683714127
 Transform:

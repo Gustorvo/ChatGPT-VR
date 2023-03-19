@@ -2,7 +2,11 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-// code copied from the OVRLipSyncContextMorphTarget.cs, with unwanted stuff removed
+/// <summary>
+/// Stripped version of OVRLipSyncContextMorphTarget.cs
+/// For lisence/copyright, see original file
+/// </summary>
+/// 
 public class LipSync : MonoBehaviour
 {
     // Manually assign the skinned mesh renderer to this script
@@ -11,7 +15,7 @@ public class LipSync : MonoBehaviour
 
     // Set the blendshape index to go to (-1 means there is not one assigned)
     [Tooltip("Blendshape index to trigger for each viseme.")]
-    public int[] visemeToBlendTargets = Enumerable.Range(0, OVRLipSync.VisemeCount).ToArray();   
+    public int[] visemeToBlendTargets = Enumerable.Range(0, OVRLipSync.VisemeCount).ToArray();
 
     // smoothing amount
     [Range(1, 100)]
@@ -20,7 +24,7 @@ public class LipSync : MonoBehaviour
 
     // Look for a lip-sync Context (should be set at the same level as this component)
     private OVRLipSyncContextBase lipsyncContext = null;
-        
+
     void Start()
     {
         string errorMessage = "LipSyncContextMorphTarget.Start Error: Please set the target Skinned Mesh Renderer to be controlled!";
@@ -36,7 +40,7 @@ public class LipSync : MonoBehaviour
         // Send smoothing amount to context
         lipsyncContext.Smoothing = smoothAmount;
     }
-   
+
     void Update()
     {
         if ((lipsyncContext != null) && (skinnedMeshRenderer != null))

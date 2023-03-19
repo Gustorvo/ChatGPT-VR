@@ -1,0 +1,17 @@
+{
+    "name": "Chat",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3248779d86bd31747b5d2214f30b01ac",
+        "GUID:bf7126905a54c9746b9c475d69312766"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
