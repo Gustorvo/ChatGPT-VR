@@ -42,7 +42,7 @@ Restart your Oculus Quest headset
 Check for updates to ChatGPT-VR or your Oculus Quest firmware
 If these steps do not resolve the issue, please file a bug report on the project's GitHub repository.
 
-## Contributing
+### Contributing
 If you would like to contribute to ChatGPT-VR, follow these steps:
 
 Fork the repository
