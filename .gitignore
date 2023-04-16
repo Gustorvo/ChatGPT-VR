@@ -60,3 +60,5 @@ crashlytics-build.properties
 
 Assets/Keys/
 Assets/Keys.meta
+Assets/Resources/AuthCredentials.txt
+Assets/Resources/AuthCredentials.txt.meta
