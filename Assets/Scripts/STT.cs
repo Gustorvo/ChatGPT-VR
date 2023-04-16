@@ -30,6 +30,7 @@ public class STT : MonoBehaviour
         if (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
         {
             Permission.RequestUserPermission(Permission.Microphone);
+            Debug.LogError("App needs microphone permissions to function!");
         }
 #endif
     }
@@ -60,8 +61,8 @@ public class STT : MonoBehaviour
 
             recognizer.Canceled += (s, e) =>
             {
-                Debug.LogError($"Recognition canceled: {e.ErrorCode}, {e.Reason}, {e.ErrorDetails}");
                 recognitionCompleted.TrySetCanceled();
+                Debug.LogError($"Recognition canceled: {e.ErrorCode}, {e.Reason}, {e.ErrorDetails}");
             };
 
             recognizer.SessionStarted += (s, e) =>

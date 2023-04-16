@@ -9,8 +9,6 @@ using System.Collections.Generic;
 
 public class ChatGPT : MonoBehaviour
 {
-    [SerializeField] TextAsset apiKey;
-
     private OpenAIClient openai;
     private string Instruction = "The following is a conversation with an AI assistant of female gender. The assistant is helpful, creative, clever and does whatever she has been asked.";
     private List<Message> chatPrompts = new List<Message>();
@@ -18,15 +16,16 @@ public class ChatGPT : MonoBehaviour
     {
         var pathToKey = Path.Combine(Application.dataPath, "Keys/");
         openai = new OpenAIClient(OpenAIAuthentication.LoadFromDirectory(pathToKey));
-        chatPrompts.Add(new Message(Role.User, Instruction));
+        chatPrompts.Add(new Message(OpenAI.Chat.Role.System, Instruction));
+        chatPrompts.Add(new Message(OpenAI.Chat.Role.Assistant, "Hello, how can I help you?"));
     }
     public async Task<string> SendRequestAsync(string request, CancellationToken token)
     {
-        chatPrompts.Add(new Message(Role.User, request));       
+        chatPrompts.Add(new Message(OpenAI.Chat.Role.User, request));
         string result = await SendReply();
-        chatPrompts.Add(new Message(Role.Assistant, result));       
+        chatPrompts.Add(new Message(OpenAI.Chat.Role.Assistant, result));
         token.ThrowIfCancellationRequested();
-        print($"Chat said: {result}");     
+        print($"Chat said: {result}");
         return result;
     }
 
@@ -48,5 +47,10 @@ public class ChatGPT : MonoBehaviour
         var chatRequest = new ChatRequest(chatPrompts, model: Model.GPT3_5_Turbo);
         var result = await openai.ChatEndpoint.GetCompletionAsync(chatRequest);
         return result.FirstChoice;
+    }
+
+    private void OnDestroy()
+    {
+        chatPrompts.Clear();
     }
 }

@@ -14,9 +14,25 @@ public class Main : MonoBehaviour
     [SerializeField] AudioClip errorAudio;
 
     private CancellationToken token;
+    private SystemStatus currentStatus;
+    public SystemStatus CurrentStatus
+    {
+        get => currentStatus;
+        private set
+        {
+            currentStatus = value;
+            OnCurrentStatusChanges?.Invoke(currentStatus);
+        }
+       
+    }
+    public string UserRecognizedText { get; private set; }
+    public string OpenAIAnswerText { get; private set; }
+
+    public static event Action<SystemStatus> OnCurrentStatusChanges;
 
     private void Start()
     {
+        CurrentStatus = SystemStatus.Inactive;
         Assert.IsNotNull(welcomePhraseAudio);
         Assert.IsNotNull(errorAudio);
         token = cancellationTokenSource.Token;
@@ -25,6 +41,8 @@ public class Main : MonoBehaviour
 
     private async Task StartDialogWithWelcomePhrase(CancellationToken token)
     {
+        OpenAIAnswerText = "Hello, how can I help you?";
+        CurrentStatus = SystemStatus.Speaking;
         await tts.SpeakAudioAsync(welcomePhraseAudio, token);
         Task _ = StartDialogLoopAsync(token);
     }
@@ -37,20 +55,22 @@ public class Main : MonoBehaviour
         while (!token.IsCancellationRequested)
         {
             try
-            {
+            {                
                 await TakeVoiceInputAndAnswerAsync(token);
             }
             catch (Exception ex)
             {
                 if (ex is OperationCanceledException)
                 {
-                    print("Canceled");
+                    Debug.LogWarning("Canceled");
                     break;
                 }
                 else
                 {
                     Debug.LogError(ex);
-                    Task _ = tts.SpeakAudioAsync(errorAudio, token);
+                    CurrentStatus = SystemStatus.Speaking;
+                    await tts.SpeakAudioAsync(errorAudio, token);
+                    CurrentStatus = SystemStatus.Inactive;
                     throw ex;
                 }
             }
@@ -62,15 +82,20 @@ public class Main : MonoBehaviour
     private async Task TakeVoiceInputAndAnswerAsync(CancellationToken token)
     {
         // take voice input
+        CurrentStatus = SystemStatus.Listerning;
         var recognizedText = await stt.StartRecognitionAsync(token);
+        UserRecognizedText = recognizedText;
 
         // send recognized voice input to ChatGPT
+        CurrentStatus = SystemStatus.Thinking;
         var chatResponse = await chat.SendRequestAsync(recognizedText, token);
+        OpenAIAnswerText = chatResponse;
 
         // try get sentimental analysis
-       // var analisis = chat.DoSentimentalAnalysis(chatResponse, token);
+        // var analisis = chat.DoSentimentalAnalysis(chatResponse, token);
 
         // Speak generated response
+        CurrentStatus = SystemStatus.Speaking;
         await tts.SpeakTextAsync(chatResponse, token);
     }
 
