@@ -13,18 +13,18 @@ public class ChatGPT : MonoBehaviour
 
     private OpenAIClient openai;
     private string Instruction = "The following is a conversation with an AI assistant of female gender. The assistant is helpful, creative, clever and does whatever she has been asked.";
-    private List<ChatPrompt> chatPrompts = new List<ChatPrompt>();
+    private List<Message> chatPrompts = new List<Message>();
     private void Awake()
     {
         var pathToKey = Path.Combine(Application.dataPath, "Keys/");
         openai = new OpenAIClient(OpenAIAuthentication.LoadFromDirectory(pathToKey));
-        chatPrompts.Add(new ChatPrompt("user", Instruction));
+        chatPrompts.Add(new Message(Role.User, Instruction));
     }
     public async Task<string> SendRequestAsync(string request, CancellationToken token)
     {
-        chatPrompts.Add(new ChatPrompt("user", request));       
+        chatPrompts.Add(new Message(Role.User, request));       
         string result = await SendReply();
-        chatPrompts.Add(new ChatPrompt("assistant", result));       
+        chatPrompts.Add(new Message(Role.Assistant, result));       
         token.ThrowIfCancellationRequested();
         print($"Chat said: {result}");     
         return result;
