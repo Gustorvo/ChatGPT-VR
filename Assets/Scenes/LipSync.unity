@@ -468,6 +468,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &750542515 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8529529850873223606, guid: 519328464250e4043a82937478aea452, type: 3}
+  m_PrefabInstance: {fileID: 1966400509}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &897141516 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3917861352137741249, guid: 519328464250e4043a82937478aea452, type: 3}
@@ -610,6 +615,22 @@ MonoBehaviour:
   skinnedMeshRenderer: {fileID: 1128363832}
   visemeToBlendTargets: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000
   smoothAmount: 85
+--- !u!114 &897141525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897141516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244e033b2569e654889c36ec6ebe2f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 750542515}
+  vertitalMargin: 1
+  horizontalMargin: 1
+  rotationSpeedAprx: 5
 --- !u!1 &994699063
 GameObject:
   m_ObjectHideFlags: 0
