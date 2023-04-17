@@ -13,7 +13,7 @@ public static class Helpers
 
             string chunk = text.Substring(0, length);
 
-            int lastSentenceEnd = chunk.LastIndexOfAny(new char[] { '.', '?', '!' });
+            int lastSentenceEnd = chunk.LastIndexOfAny(new char[] { '.', '?', '!', ':' });
 
             if (lastSentenceEnd != -1)
             {
