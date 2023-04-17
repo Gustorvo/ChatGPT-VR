@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LipSync.unity
+    path: Assets/Scenes/Main.unity
     guid: fd7b7542dcc11044f8204160424afc66
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8e53b5a6a11d452439db3b2b29d16420, type: 2}

@@ -89,10 +89,7 @@ public class Main : MonoBehaviour
         // send recognized voice input to ChatGPT
         CurrentStatus = SystemStatus.Thinking;
         var chatResponse = await chat.SendRequestAsync(recognizedText, token);
-        OpenAIAnswerText = chatResponse;
-
-        // try get sentimental analysis
-        // var analisis = chat.DoSentimentalAnalysis(chatResponse, token);
+        OpenAIAnswerText = chatResponse;       
 
         // Speak generated response
         CurrentStatus = SystemStatus.Speaking;

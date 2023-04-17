@@ -6,12 +6,14 @@ using OpenAI.Models;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using OpenAI.Completions;
 
 public class ChatGPT : MonoBehaviour
 {
     private OpenAIClient openai;
     private string Instruction = "The following is a conversation with an AI assistant of female gender. The assistant is helpful, creative, clever and does whatever she has been asked.";
     private List<Message> chatPrompts = new List<Message>();
+  
     private void Awake()
     {
         var pathToKey = Path.Combine(Application.dataPath, "Keys/");
@@ -27,20 +29,21 @@ public class ChatGPT : MonoBehaviour
         token.ThrowIfCancellationRequested();
         print($"Chat said: {result}");
         return result;
+       
     }
 
-    //public async Task<string> DoSentimentalAnalysis(string text, CancellationToken token)
-    //{
-    //    string parsedText = Regex.Replace(text, @"SENT_ANALYSIS:\s*\d+", string.Empty);
-    //    //print("Trying to do sentimental analysis of text:" + parsedText);
-    //    string instructions = "Decide whether a text's sentiment is positive, neutral, or negative (in the given context), returning a label (either 'positive', 'negative' or 'neutral') followed by a score between +1 and -1.";
-    //    instructions += parsedText;
-    //    string result = await SendReply();
-    //    // check for cancellation request
-    //    token.ThrowIfCancellationRequested();
-    //    print($"Sentimental analysis: {result}");
-    //    return result;
-    //}
+    public async Task<string> DoSentimentalAnalysis(string text, CancellationToken token)
+    {
+        string instructions = "Decide whether a given text's sentiment is positive, neutral, or negative, returning a label (either 'positive', 'negative' or 'neutral') followed by a score between 1 and -1, Where most positive sentiment is 1 and most negative = -1. Text: ";
+        instructions += text;
+        print($"sending text for sentiment analysis, text: {instructions}");
+        CompletionRequest complitionRequest = new CompletionRequest(model: Model.Ada);
+        complitionRequest.Prompt = instructions;    
+        var result = await openai.CompletionsEndpoint.CreateCompletionAsync(complitionRequest, token);
+        token.ThrowIfCancellationRequested();
+        print($"Sentimental analysis: {result}");
+        return result.ToString();
+    }
 
     private async Task<string> SendReply()
     {
